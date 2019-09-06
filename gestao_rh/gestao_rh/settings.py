@@ -32,6 +32,8 @@ ALLOWED_HOSTS = []
 
 EXTERNAL_APPS = [
     'apps.empresas',
+    'apps.funcionarios',
+    'apps.departamentos',
 
 ]
 
