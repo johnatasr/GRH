@@ -16,8 +16,7 @@ EXTERNAL_APPS = [
     'apps.documentos',
     'apps.registro_horas_extra',
     'apps.core',
-
-]
+    ]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -99,3 +98,6 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static")
 ]
+
+LOGIN_REDIRECT_URL = ['home']
+
