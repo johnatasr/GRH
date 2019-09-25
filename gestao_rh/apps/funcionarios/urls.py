@@ -4,6 +4,8 @@ from ..funcionarios import views
 app_name='funcionarios'
 
 urlpatterns = [
-    path('', views.func_view),
+    path('', views.FuncionariosList.as_view(), name='list_funcionarios'),
+    path('editar/<int:pk>', views.FuncionarioUpdate.as_view(), name='update_funcionarios'),
+    path('deletar/<int:pk>', views.FuncionarioDelete.as_view(), name='delete_funcionarios'),
 
 ]

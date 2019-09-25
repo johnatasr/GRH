@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% load static %}
+{% block main %}
+    <form method="post">
+        {% csrf_token %}
+        <h1>Você deseja excluir o funcionário {{ obj }} ?</h1>
+        {{ form }}
+        <button type="submit" class="btn-danger">Sim</button>
+    </form>
+{% endblock %}

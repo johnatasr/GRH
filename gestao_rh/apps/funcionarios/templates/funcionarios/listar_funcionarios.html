@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}
+{% block main %}
+   <h1>Lista Funcionários</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for funcionario in object_list  %}
+            <tr>
+                <th>{{ funcionario }}<th>
+                <th><a href="{% url 'funcionarios:update_funcionarios' funcionario.id %}">Editar</a></th>
+                <th><a href="{% url 'funcionarios:delete_funcionarios' funcionario.id %}">Excluir</a></th>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+{% endblock %}

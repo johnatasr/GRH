@@ -9,14 +9,15 @@
     </div>
     <div class="col-sm">
      Olá {{ usuario.funcionario.nome  }}
+        <a href="{% url 'funcionarios:list_funcionarios' %}">Funcionarios</a>
     </div>
-    <div class="col-sm">
+      <div class="col-sm">
       <a href="{% url 'logout' %}">Logout</a>
 
       {% if usuario.funcionario.nome %}
-        <a href="">Editar Empresa</a>
+        <a href="{% url 'empresa:editar_empresa' usuario.funcionario.empresa.id %}">Editar Empresa</a>
       {% else %}
-        <a href="{% url 'empresa:criar' %}">Criar Empresa</a>
+        <a href="{% url 'empresa:criar_empresa' %}">Criar Empresa</a>
       {% endif %}
     </div>
   </div>
