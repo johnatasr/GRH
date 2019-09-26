@@ -29,11 +29,13 @@ class FuncionarioDelete(DeleteView):
 class FuncionarioCreate(CreateView):
 
     model = Funcionario
-    template_name = 'fncionarios/create_funcionarios.html'
+    fields = ['nome', 'departamentos']
+    template_name = 'funcionarios/create_funcionarios.html'
+    success_url = reverse_lazy('funcionarios:list_funcionarios')
 
     def form_valid(self, form):
 
-        funcionario = self.form.save(commit=False)
+        funcionario = form.save(commit=False)
         username = funcionario.nome.split(' ')[0] + funcionario.nome.split(' ')[1]
         funcionario.empresa = self.request.user.funcionario.empresa
         funcionario.usuario = User.objects.create(username=username)

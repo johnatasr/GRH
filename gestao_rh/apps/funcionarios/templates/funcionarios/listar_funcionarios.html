@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load bootstrap %}
 {% block main %}
    <h1>Lista Funcionários</h1>
 
@@ -21,5 +22,6 @@
         </tbody>
     </table>
 
+    <a href="{% url 'funcionarios:create_funcionarios' %}" class="btn btn-success">Novo</a>
 
 {% endblock %}

@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load static %}
+{% load bootstrap %}
+{% block main %}
+   <h1>Lista Departamentos</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for departamento in object_list  %}
+            <tr>
+                <th>{{ departamento }}<th>
+                <th><a href="{% url 'departamentos:update_departamentos' departamento.id %}">Editar</a></th>
+                <th><a href="{% url 'departamentos:delete_departamentos' departamento.id %}">Excluir</a></th>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{% url 'departamentos:create_departamento' %}">Novo</a>
+
+{% endblock %}

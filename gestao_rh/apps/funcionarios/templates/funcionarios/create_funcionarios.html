@@ -1,11 +1,14 @@
 {% extends "base.html" %}
 {% load static %}
+{% load bootstrap %}
 {% block main %}
    <h1>Novo Funcionário</h1>
-    <form>
+    <form method="post">
         {% csrf_token %}
-        {{ form }}
-        <button type="submit">Salvar</button>
+        {{ form|bootstrap }}
+        <button class="btn btn-primary" type="submit">Salvar</button>
     </form>
+
+    <a href="{% url 'documentos:create_documento' pertence.id %}" class="btn btn-success">Adicionar Documento</a>
 
 {% endblock %}
